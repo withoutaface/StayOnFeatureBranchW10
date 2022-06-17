@@ -1,9 +1,7 @@
 # StayOnFeatureBranchW10
  Set your preferred windows 10 version/update in registry and defer feature updates.
 
-<div style="width:70px ; height:70px">
 ![Alt text](image/stayonfeaturebranchw10icon.png "App icon")
-<div>
 
 Description:
 - Allows to stay on a Windows 10 target release by setting the version in registry
@@ -15,7 +13,7 @@ Requirements:
 ![Alt text](image/stayonfeaturebranchw10app.png "App image")
 
 Validation:
-- Check if you windows update panel shows "Some settings are managed by your organisation"
+- Check if your windows update panel shows "Some settings are managed by your organisation" after saving changes to registry
 
 ![Alt text](image/stayonfeaturebranchw10windowsupdate.png "Windows update image")
 

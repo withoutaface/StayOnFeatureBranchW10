@@ -1,0 +1,107 @@
+﻿<Window x:Class="StayOnFeatureBranchW10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StayOnFeatureBranchW10"
+        mc:Ignorable="d"
+        Title="StayOnFeatureBranchW10" Height="740" Width="1200" Loaded="WindowLoaded" FontSize="14">
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="320"></RowDefinition>
+            <RowDefinition Height="360"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="275"></ColumnDefinition>
+            <ColumnDefinition Width="280"></ColumnDefinition>
+            <ColumnDefinition Width="280"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="10,10,0,0" Grid.Row="0">
+            <Label x:Name="lblVersion" Content="Current Windows Version:" FontWeight="Bold"/>
+            <Label x:Name="lblProduct" Content="Product:" />
+            <Label x:Name="lblEdition" Content="Edition: " />
+            <Label x:Name="lblRelease" Content="Release:" />
+            <Label x:Name="lblArch" Content="OS architecture:" />
+            <Label x:Name="lblBuild" Content="OS build:" />
+            <Image x:Name="image" Height="140" Source="StayOnFeatureBranchW10-300px.png" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        <StackPanel Margin="10,10,0,0" Grid.Column="0" Grid.Row="1">
+            <Label x:Name="lblStatus" Content="Status:" FontWeight="Bold"/>
+            <Label x:Name="lblSupported" Content="OS support?" />
+            <Label x:Name="lblUpdateMatchReg" Content="Update in registry?" />
+            <Label x:Name="lblEndOfSupport" Content="End of support reached?" />
+            <Label x:Name="lblNotification" Content="Notification" Margin="10,10,0,0"/>
+            <Button x:Name="btnSaveJsonConfig" Content="SaveJsonConfig" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="34" Click="btnSaveJsonConfig_Click"/>
+            <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Center" VerticalAlignment="Top" Width="105" Height="34" Margin="0,10,0,0" Click="btnHelp_Click"/>
+            <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Center" VerticalAlignment="Top" Width="105" Height="34" Margin="0,10,0,0" Click="btnAbout_Click"/>
+            <Label x:Name="lblToolVersion" Content="v0.0" Margin="0,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel Margin="10,10,0,0" Grid.Row="0" Grid.Column="1">
+            <Label x:Name="lblCurrentFeatureUpdate" Content="Current feature update: " FontWeight="Bold"/>
+            <Label x:Name="lblFeatureUpdateVersion" Content="Version:" />
+            <Label x:Name="lblFeatureUpdateBuild" Content="Build:" />
+            <Label x:Name="lblFeatureUpdateName" Content="Name:" />
+            <Label x:Name="lblFeatureUpdateRelease" Content="Release date:" />
+            <Label x:Name="lblFeatureUpdateEndOfSupport" Content="End of support:" />
+        </StackPanel>
+
+        <StackPanel Margin="10,10,0,0" Grid.Row="1" Grid.Column="1">
+            <Label x:Name="lblCurrentRegistry" Content="Current registry values: " FontWeight="Bold"/>
+            <Label x:Name="lblTargetReleaseActive" Content="TargetRelease activated: "/>
+            <Label x:Name="lblTargetReleaseId" Content="TargetRelease Version:" />
+            <Label x:Name="lblDeferFeatureUpdates" Content="Defer feature updates:" Margin="0,20,0,0"/>
+            <Label x:Name="lblBranchReadiness" Content="Branch readiness level:" />
+            <Label x:Name="lblDeferFeatureUpdatesInDays" Content="Defer feature updates in days:" />
+            <Label x:Name="lblPauseFeatureUpdatesStartTime" Content="Pause feature updates start time:" />
+            <Label x:Name="lblDeferQualityUpdates" Content="Defer quality updates:" Margin="0,20,0,0"/>
+            <Label x:Name="lblDeferQualityUpdatesPeriodInDays" Content="Defer quality updates in days:" />
+            <Label x:Name="lblPauseQualityUpdatesStartTime" Content="Pause quality updates start time:" />
+        </StackPanel>
+
+        <StackPanel Margin="10,10,0,0" Grid.Row="0" Grid.Column="2">
+            <Label x:Name="lblNewFeatureUpdate" Content="Selected feature update: " FontWeight="Bold"/>
+            <Label x:Name="lblNewFeatureUpdateVersion" Content="Version:" />
+            <Label x:Name="lblNewFeatureUpdateBuild" Content="Build:" />
+            <Label x:Name="lblNewFeatureUpdateName" Content="Name:" />
+            <Label x:Name="lblNewFeatureUpdateRelease" Content="Release date:" />
+            <Label x:Name="lblNewFeatureUpdateEndOfSupport" Content="End of support:" />
+        </StackPanel>
+
+        <StackPanel Margin="10,10,0,0" Grid.Row="1" Grid.Column="2">
+            <Label x:Name="lblNewRegistry" Content="New registry values: " FontWeight="Bold"/>
+            <Label x:Name="lblNewTargetReleaseActive" Content="TargetRelease activated: "/>
+            <Label x:Name="lblNewTargetReleaseId" Content="TargetRelease Version:" />
+            <Label x:Name="lblNewDeferFeatureUpdates" Content="Defer feature updates:" Margin="0,20,0,0"/>
+            <Label x:Name="lblNewBranchReadiness" Content="Branch readiness level:" />
+            <Label x:Name="lblNewDeferFeatureUpdatesInDays" Content="Defer feature updates in days:" />
+            <Label x:Name="lblNewPauseFeatureUpdatesStartTime" Content="Pause feature updates start time:" />
+            <Label x:Name="lblNewDeferQualityUpdates" Content="Defer quality updates:" Margin="0,20,0,0"/>
+            <Label x:Name="lblNewDeferQualityUpdatesPeriodInDays" Content="Defer quality updates in days:" />
+            <Label x:Name="lblNewPauseQualityUpdatesStartTime" Content="Pause quality updates start time:" />
+        </StackPanel>
+
+        <StackPanel Margin="10,10,0,0" Grid.Row="0" Grid.Column="3">
+            <ListBox x:Name="lstFeatureUpdates" Grid.Column="3" Height="227" Width="287" SelectionChanged="lstFeatureUpdates_SelectionChanged"/>
+        </StackPanel>
+
+        <StackPanel Margin="10,10,0,0" Grid.Row="1" Grid.Column="3">
+            <Label x:Name="lblUserIsAdmin" Content="Administrator rights?" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="btnUnlockLock" Content="Unlock settings" Width="152" Height="36" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnUnlockLock_Click"/>
+            <CheckBox x:Name="chkLockTargetRelease" Content="Lock target release" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15,0,0" Click="chkLockTargetRelease_Click"/>
+            <Label x:Name="lblSelectedFeatureUpdate" Margin="0,1,0,0" Content="Selected update: " />
+            <Label x:Name="lblRecommended" Margin="0,1,0,0" Content="Recommended version:" />
+            <CheckBox x:Name="chkDeferFeatureUpdates" Content="Defer feature updates (days)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15,0,0" Click="chkDeferFeatureUpdates_Click"/>
+            <ComboBox x:Name="cmbDeferFeatureInDays" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0" Width="120" SelectionChanged="cmbDeferFeatureInDays_SelectionChanged"/>
+            <CheckBox x:Name="chkDeferQualityUpdates" Content="Defer quality updates (days)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,15,0,0" Click="chkDeferQualityUpdates_Click"/>
+            <ComboBox x:Name="cmbDeferQualityInDays" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0" Width="120" SelectionChanged="cmbDeferQualityInDays_SelectionChanged"/>
+            <Button x:Name="btnSaveNewRegistry" Content="Save registry values" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Width="152" Height="36" Click="btnSaveNewRegistry_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
