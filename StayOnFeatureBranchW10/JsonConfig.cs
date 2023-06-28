@@ -122,6 +122,7 @@ namespace StayOnFeatureBranchW10
             Windows10FeatureUpdateInfo update20H2 = new Windows10FeatureUpdateInfo { rank = 11, version = "20H2", build = "19042", name = "Oktober-2020-Update (20H2)", releasedate = "2020-10-20", endofsupport = "2022-05-10", recommended = true };
             Windows10FeatureUpdateInfo update21H1 = new Windows10FeatureUpdateInfo { rank = 12, version = "21H1", build = "19043", name = "Mai-2021-Update (21H1)", releasedate = "2021-05-18", endofsupport = "2022-12-13", recommended = false };
             Windows10FeatureUpdateInfo update21H2 = new Windows10FeatureUpdateInfo { rank = 13, version = "21H2", build = "19044", name = "November-2021-Update (21H2)", releasedate = "2021-11-16", endofsupport = "2023-06-13", recommended = true };
+            Windows10FeatureUpdateInfo update22H2 = new Windows10FeatureUpdateInfo { rank = 14, version = "22H2", build = "19045", name = "2022-Update (22H2)", releasedate = "2022-10-20", endofsupport = "2025-10-14", recommended = true };
 
             _configFeatureUpdates = new List<Windows10FeatureUpdateInfo>();
             _configFeatureUpdates.Add(update1507);
@@ -137,6 +138,7 @@ namespace StayOnFeatureBranchW10
             _configFeatureUpdates.Add(update20H2);
             _configFeatureUpdates.Add(update21H1);
             _configFeatureUpdates.Add(update21H2);
+            _configFeatureUpdates.Add(update22H2);
 
             string configFeatureUpdatesAsJSON = JsonConvert.SerializeObject(_configFeatureUpdates, Formatting.Indented);
 

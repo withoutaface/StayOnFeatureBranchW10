@@ -59,6 +59,9 @@ namespace StayOnFeatureBranchW10
             #else
             btnSaveJsonConfig.IsEnabled = false;
             btnSaveJsonConfig.Visibility = Visibility.Hidden;
+            //Hide button to update release information from web
+            btnUpdateReleaseInformation.IsEnabled = false;
+            btnUpdateReleaseInformation.Visibility = Visibility.Hidden;
             #endif
 
             //Show version and build number
@@ -854,5 +857,14 @@ namespace StayOnFeatureBranchW10
 
         #endregion
 
+        private void btnUpdateReleaseInformation_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO Function is work in progress
+            WebConfig webConfig = new WebConfig();
+
+            string content = webConfig.ReadWikiContent();
+
+            MessageBox.Show(content);
+        }
     }
 }

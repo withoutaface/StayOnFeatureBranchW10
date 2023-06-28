@@ -85,6 +85,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WebConfig.cs" />
     <Compile Include="JsonConfig.cs" />
     <Compile Include="RegistryRead.cs" />
     <Compile Include="MainWindow.xaml.cs">
